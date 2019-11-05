@@ -2844,8 +2844,7 @@ case_expression
     ;
 
 unary_operator_expression
-    : '~' expression
-    | op=('+' | '-') expression
+	: op=('~' | '+' | '-') expression
     ;
 
 bracket_expression
@@ -4041,11 +4040,11 @@ simple_id
 // https://msdn.microsoft.com/en-us/library/ms188074.aspx
 // Spaces are allowed for comparison operators.
 comparison_operator
-    : '=' | '>' | '<' | '<' '=' | '>' '=' | '<' '>' | '!' '=' | '!' '>' | '!' '<'
+    : op=('=' | '>' | '<' | '<' '=' | '>' '=' | '<' '>' | '!' '=' | '!' '>' | '!' '<')
     ;
 
 assignment_operator
-    : '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '^=' | '|='
+    : op=('+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '^=' | '|=')
     ;
 
 file_size
